@@ -1,0 +1,4 @@
+SELECT us1.Name FROM users us1
+INNER JOIN Purchaises purch1 ON (us1.CustomerId = purch1.CustomerId AND purch1.ProductName = 'moloko' ) LEFT OUTER JOIN Purchaises purch2
+ON (purch2.CustomerId = purch2.CustomerId AND purch1.ProductName = 'smetana' AND purch2.PurchaiseDatetime >= DATEADD(MONTH, -1, GETDATE()))
+WHERE purch2.PurchaiseId IS NULL
